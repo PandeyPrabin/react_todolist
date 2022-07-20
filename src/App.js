@@ -7,13 +7,18 @@ import TodoForm_modal from './components/todoForm_modal';
 
 function App() {
 
-  const[openForm, setOpenForm]=useState(false)
+  const [openForm, setOpenForm] = useState(false)
+  const [todos, setTodos] = useState([])
 
   return (
     <div className="App">
       <Addtodo_button openForm={openForm} setOpenForm={setOpenForm}/>
-      {/* <TodoList /> */}
-      <TodoForm_modal openForm={openForm} setOpenForm={setOpenForm} />
+
+      <TodoList todos={todos} setTodos={setTodos}/>
+      
+      <TodoForm_modal 
+      todos={todos} setTodos={setTodos}
+      openForm={openForm} setOpenForm={setOpenForm} />
     </div>
   );
 }

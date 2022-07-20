@@ -1,31 +1,31 @@
 import React, { useState } from 'react'
 import './todoForm_modal.css'
 
-function TodoForm_modal({openForm, setOpenForm}) {
+function TodoForm_modal({openForm, setOpenForm, todos, setTodos}) {
 
   const [title, setTitle] = useState('')
   const [deadline, setDeadline] = useState('')
   const [status, setStatus] = useState('Not Started')
-  const [items, setItems] = useState([]) 
+  //const [items, setItems] = useState([]) 
 
   const addItem = (e) =>{
   console.log({title, deadline, status})
     if(!title){
 
     }else{
-      setItems([...items, title])
+      setTodos([...todos, title, deadline, status])
       setTitle('')
       setDeadline('')
       setStatus('')
-      //setOpenForm(false)
+      setOpenForm(false)
     }
   }
   
   const deleteItem = (id) =>{
-    const updateditems = items.filter((elem, ind)=>{
+    const updateditems = todos.filter((elem, ind)=>{
       return ind ===! id
     })
-    setItems(updateditems)
+    setTodos(updateditems)
   }
 
   return (
@@ -64,18 +64,6 @@ function TodoForm_modal({openForm, setOpenForm}) {
             >Cancel</button>
           <button className='add-btn' title='Add Item' onClick={addItem}>Add</button>
         </div>
-
-          {
-            items.map((elem, ind)=>{
-              return(
-                <div className='eachItem' key={ind}>
-                  <h3>{ elem }</h3>
-                  <i className='fa fa-trash' title='Delete Item'
-                  onClick={()=>deleteItem(ind)}/>
-                </div>
-              )
-            })
-          }
       </div>
     </div>)}
     </div>
