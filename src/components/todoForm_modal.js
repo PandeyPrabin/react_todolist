@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './todoForm_modal.css'
 
-function TodoForm_modal({openModal, setOpenModal}) {
+function TodoForm_modal({openForm, setOpenForm}) {
 
   const [inputData, setInputData] = useState('')
   const [items, setItems] = useState([]) 
@@ -24,10 +24,6 @@ function TodoForm_modal({openModal, setOpenModal}) {
   return (
     <div className='modalBackground'>
       <div className='modalContainer'>
-        {/* <div>
-          <button>Cancel</button>
-          <button>Add</button>
-        </div> */}
         <div className='title'>
           <h1>Add new todo</h1>
         </div>
@@ -36,7 +32,6 @@ function TodoForm_modal({openModal, setOpenModal}) {
         value={inputData}
         onChange={(e)=>setInputData(e.target.value)}/></label>
         <label><input type="text" placeholder='Deadline'/></label>
-        {/* <label><input type="text" placeholder='Status'/></label> */}
           <label>
               <select id='status' placeholder='Status'>
                 <option value='notstarted'>Not Started</option>
@@ -47,10 +42,9 @@ function TodoForm_modal({openModal, setOpenModal}) {
         </div>
         <div className='footer'>
           <button className='CancelBtn' id='CancelBtn' 
-          onClick={()=>setOpenModal(false)}
-          onKeyDown={()=>setOpenModal(false)}
+          onClick={()=>setOpenForm(false)}
+          onKeyDown={()=>setOpenForm(false)}
             >Cancel</button>
-            {/* <button>Add</button> */}
           <button className='add-btn' title='Add Item' onClick={addItem}>Add</button>
         </div>
           {
