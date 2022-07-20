@@ -2,10 +2,10 @@ import React from 'react'
 import './todoitem.css';
 
 
-function TodoItem() {
+function TodoItem({text, deadline, status}) {
   return (
     <div className='todoitem'>
-        <li className='todo-item'>Heyy</li>
+        <li className='todo-item'>{text}{deadline}{status}</li>
         {/* <button className='trash-button'><i className='fas fa-trash'></i></button> */}
     </div>
   )

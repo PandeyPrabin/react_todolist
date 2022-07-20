@@ -9,11 +9,10 @@ function TodoForm_modal({openForm, setOpenForm, todos, setTodos}) {
   //const [items, setItems] = useState([]) 
 
   const addItem = (e) =>{
-  console.log({title, deadline, status})
     if(!title){
 
     }else{
-      setTodos([...todos, title, deadline, status])
+      setTodos([...todos, {text:title, deadline:deadline, status:status, id: Math.random()*1000}])
       setTitle('')
       setDeadline('')
       setStatus('')
