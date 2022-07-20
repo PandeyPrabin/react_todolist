@@ -1,9 +1,9 @@
 .todo{
-    display: flex;
+    margin-top: 50px;
+    margin-left: 40px;
     align-items: center;
     justify-content: center;
     border: none;
-    height: 100vh;
   }
 
 .openModalBtn {
