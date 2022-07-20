@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
 import './todoForm_modal.css'
 
-function TodoForm_modal({openModal, setOpenModal}) {
+function TodoForm_modal({openForm, setOpenForm}) {
 
-  const [inputData, setInputData] = useState('')
+  const [title, setTitle] = useState('')
+  const [deadline, setDeadline] = useState('')
+  const [status, setStatus] = useState('Not Started')
   const [items, setItems] = useState([]) 
-  const addItem = () =>{
-    if(!inputData){
+
+  const addItem = (e) =>{
+  console.log({title, deadline, status})
+    if(!title){
 
     }else{
-      setItems([...items, inputData])
-      setInputData('')
+      setItems([...items, title])
+      setTitle('')
     }
   }
   
@@ -22,37 +26,41 @@ function TodoForm_modal({openModal, setOpenModal}) {
   }
 
   return (
+      
     <div className='modalBackground'>
       <div className='modalContainer'>
-        {/* <div>
-          <button>Cancel</button>
-          <button>Add</button>
-        </div> */}
         <div className='title'>
-          <h1>Add new todo</h1>
+          <p>Add new todo</p>
         </div>
         <div className='body'>
+
         <label><input type="text" placeholder='Title'
-        value={inputData}
-        onChange={(e)=>setInputData(e.target.value)}/></label>
-        <label><input type="text" placeholder='Deadline'/></label>
-        {/* <label><input type="text" placeholder='Status'/></label> */}
+        value={title}
+        onChange={(e)=>setTitle(e.target.value)}/></label>
+
+        <label><input type="text" placeholder='Deadline'
+        value={deadline}
+        onChange={(e)=>setDeadline(e.target.value)}/></label>
           <label>
-              <select id='status' placeholder='Status'>
+              <select id='status' placeholder='Status' 
+        value={status}
+        onChange={(e)=>setStatus(e.target.value)}
+        className='select'>
                 <option value='notstarted'>Not Started</option>
                 <option value='inprogress'>In Progress</option>
                 <option value='done'>Done</option>
               </select>
           </label>
         </div>
+
         <div className='footer'>
           <button className='CancelBtn' id='CancelBtn' 
-          onClick={()=>setOpenModal(false)}
-          onKeyDown={()=>setOpenModal(false)}
+          onClick={()=>setOpenForm(false)}
+          onKeyDown={()=>setOpenForm(false)}
             >Cancel</button>
-            {/* <button>Add</button> */}
           <button className='add-btn' title='Add Item' onClick={addItem}>Add</button>
         </div>
+
           {
             items.map((elem, ind)=>{
               return(

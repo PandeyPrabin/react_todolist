@@ -9,20 +9,20 @@
 }
 
 .modalContainer{
-    width: 500px;
-    height: 500px;
-    border-radius: 12px;
+    width: 700px;
+    height: 400px;
     background-color: rgb(211, 209, 209);
-    box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
     display: flex;
     flex-direction: column;
-    padding: 25px;
+    padding: 15px;
 }
 
 .modalContainer .title{
-    display: inline-block;
-    text-align: initial;
-    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: lighter;
 }
 
 .titleCloseBtn{
@@ -37,13 +37,10 @@
     cursor: pointer;
 }
 
-.modalContainer .body{
-    flex: 50px;
-    display: table-column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.7rem;
-    text-align: center;
+.body{
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
 }
 
 .modalContainer .footer{
@@ -51,19 +48,56 @@
     display: flex;
     justify-content: flex-end;
     align-content: flex-end;
+    margin-bottom: 10px;
 }
 .modalContainer .footer button{
-    width: 150px;
+    width: 130px;
     height: 45px;
     margin: 10px;
     border: none;
     background-color: cornflowerblue;
     color: white;
-    border-radius: 8px;
     font-size: 20px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 #CancelBtn{
     background-color: grey;
 }
+
+input {
+    min-width: 675px;
+    height: 40px;
+    font-size: 25px;
+    margin-top: 2rem;
+    color: black;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid black;
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    
+  }
+  ::placeholder {
+    color: black;
+    font-weight: normal;
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    padding-left: 5px;
+  }
+  .select{
+    min-width: 675px;
+    height: 40px;
+    font-size: 25px;
+    margin-top: 2rem;
+    color: black;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid black;
+    font-family: sans-serif;
+    font-weight: lighter;
+    padding-left: 5px;
+  }
