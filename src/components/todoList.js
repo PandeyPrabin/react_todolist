@@ -1,10 +1,14 @@
 import React from 'react'
 import TodoItem from './todoItem'
 
-function TodoList() {
+function TodoList({todos, setTodos}) {
   return (
-    <div>
-        <TodoItem />
+    <div className='todo-container'>
+      <div className='todo-list'>
+          {todos.map(todo => (
+            <TodoItem />
+          ))}
+      </div>
     </div>
   )
 }
