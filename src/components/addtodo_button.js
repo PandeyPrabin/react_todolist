@@ -5,9 +5,7 @@ import './addtodo_button.css'
 
 
 
-function Addtodo_button() {
-
-    const[openForm, setOpenForm]=useState(false)
+function Addtodo_button({openForm, setOpenForm}) {
 
   return (
   <>
