@@ -15,6 +15,9 @@ function TodoForm_modal({openForm, setOpenForm}) {
     }else{
       setItems([...items, title])
       setTitle('')
+      setDeadline('')
+      setStatus('')
+      //setOpenForm(false)
     }
   }
   
@@ -26,7 +29,8 @@ function TodoForm_modal({openForm, setOpenForm}) {
   }
 
   return (
-      
+    <div>
+        {openForm &&(
     <div className='modalBackground'>
       <div className='modalContainer'>
         <div className='title'>
@@ -73,7 +77,9 @@ function TodoForm_modal({openForm, setOpenForm}) {
             })
           }
       </div>
+    </div>)}
     </div>
+    
   )
 }
 
