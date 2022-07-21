@@ -5,6 +5,7 @@
     height: 100px;
     width: 600px;
     margin-top: 8px;
+    
 }
 
 .status{
@@ -13,4 +14,36 @@
     text-align: start;
     list-style-type: none;
 }
+.list-container{
+    display: flex;
+    margin-top: 30px;
+}
+.statuslist{
+    display: flex;
+}
+
+.list-done{
+    height: 80px;
+    width: 15px;
+    background-color:green;
+}
+.list-not-started{
+    height: 80px;
+    width: 15px;
+    background-color:red;
+}
+.list-in-progress{
+    height: 80px;
+    width: 15px;
+    background-color:yellow;
+}
+.list-name{
+    width: 200px;
+    display: flex;
+    text-align: start;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
 

@@ -11,6 +11,7 @@ function TodoItem({title, deadline, status, todos, setTodos, openForm, setOpenFo
   }
 
   return (
+    <div>
     <div className='todoitem-container'>
       <div className='status' style={{ background: status}}>
       </div>
@@ -19,6 +20,23 @@ function TodoItem({title, deadline, status, todos, setTodos, openForm, setOpenFo
         <ul>Status:{status}</ul>
         <ul>Deadline:{deadline}</ul>
         </div>
+        </div>
+        <div className='list-container'>
+
+        <div className='statuslist'>
+          <div className='list-done'></div>
+          <div className='list-name'>Done</div>
+          </div>
+          <div className='statuslist'>
+          <div className='list-not-started'></div>
+          <div className='list-name'>Not started</div>
+          </div>
+          <div className='statuslist'>
+          <div className='list-in-progress'></div>
+          <div className='list-name'>In progress</div>
+          </div>
+
+      </div>
     </div>
   )
 }
