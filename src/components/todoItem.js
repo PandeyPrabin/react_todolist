@@ -3,8 +3,6 @@ import './todoitem.css';
 
 
 function TodoItem({title, deadline, status, todos, setTodos, openForm, setOpenForm}) {  
-console.log(status)
-
   const newEditTodo = () => {
      let newTodo = todos.find((todo)=>{
             return todo.id === todo.id

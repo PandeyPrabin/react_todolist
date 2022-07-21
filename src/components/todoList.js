@@ -2,7 +2,6 @@ import React from 'react'
 import TodoItem from './todoItem'
 
 function TodoList({todos, setTodos, openForm, setOpenForm}) {
-  //console.log(todos)
   return (
     <div className='todo-container'>
       <div className='todo-list'>

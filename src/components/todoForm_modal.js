@@ -46,10 +46,11 @@ function TodoForm_modal({openForm, setOpenForm, todos, setTodos}) {
         value={deadline}
         onChange={(e)=>setDeadline(e.target.value)}/></label>
           <label>
-              <select id='status' placeholder='Status' 
+              <select id='status'  
         value={status}
         onChange={(e)=>setStatus(e.target.value)}
-        className='select'>
+        className='select' placeholder='Status'>
+                <option value='red'>Status</option>
                 <option value='red'>Not Started</option>
                 <option value='yellow'>In Progress</option>
                 <option value='green'>Done</option>
