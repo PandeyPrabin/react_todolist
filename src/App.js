@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Addtodo_button openForm={openForm} setOpenForm={setOpenForm}/>
 
-      <TodoList todos={todos} setTodos={setTodos}/>
+      <TodoList todos={todos} setTodos={setTodos} openForm={openForm} setOpenForm={setOpenForm}/>
       
       <TodoForm_modal 
       todos={todos} setTodos={setTodos}

@@ -1,13 +1,20 @@
 import React from 'react'
 import TodoItem from './todoItem'
 
-function TodoList({todos, setTodos}) {
+function TodoList({todos, setTodos, openForm, setOpenForm}) {
   console.log(todos)
   return (
     <div className='todo-container'>
       <div className='todo-list'>
           {todos.map(todo => (
-            <TodoItem text={todo.text} deadline={todo.deadline} status={todo.status}/>
+            <TodoItem 
+            text={todo.text} 
+            deadline={todo.deadline} 
+            status={todo.status} 
+            todos={todos} 
+            setTodos={setTodos} 
+            openForm={openForm} 
+            setOpenForm={setOpenForm}/>
           ))}
       </div>
     </div>
