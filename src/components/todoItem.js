@@ -2,20 +2,25 @@ import React from 'react'
 import './todoitem.css';
 
 
-function TodoItem({text, deadline, status, todos, setTodos, openForm, setOpenForm}) {
+function TodoItem({title, deadline, status, todos, setTodos, openForm, setOpenForm}) {  
+console.log(status)
 
-  const editTodo = () => {
+  const newEditTodo = () => {
      let newTodo = todos.find((todo)=>{
             return todo.id === todo.id
       })
-      setOpenForm(true)
+       setOpenForm(true)
   }
 
   return (
-    <div className='todoitem'>
-        <li className='todo-item' onClick={editTodo}>{text}{status}</li>
-        <li>Deadline:{deadline}</li>
-        {/* <button className='trash-button'><i className='fas fa-trash'></i></button> */}
+    <div className='todoitem-container'>
+      <div className='status' style={{ background: status}}>
+      </div>
+       <div className='todo-item' onClick={newEditTodo}>
+        <ul  >{title}</ul>
+        <ul>Status:{status}</ul>
+        <ul>Deadline:{deadline}</ul>
+        </div>
     </div>
   )
 }

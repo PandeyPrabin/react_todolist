@@ -5,14 +5,15 @@ function TodoForm_modal({openForm, setOpenForm, todos, setTodos}) {
 
   const [title, setTitle] = useState('')
   const [deadline, setDeadline] = useState('')
-  const [status, setStatus] = useState('Not Started')
+  const [status, setStatus] = useState('red')
   //const [items, setItems] = useState([]) 
 
   const addItem = (e) =>{
+     // e.preventDefault()
     if(!title){
 
     }else{
-      setTodos([...todos, {text:title, deadline:deadline, status:status, id: Math.random()*1000}])
+      setTodos([...todos, {title:title, deadline:deadline, status:status, id: Math.random()*1000}])
       setTitle('')
       setDeadline('')
       setStatus('')
@@ -49,9 +50,9 @@ function TodoForm_modal({openForm, setOpenForm, todos, setTodos}) {
         value={status}
         onChange={(e)=>setStatus(e.target.value)}
         className='select'>
-                <option value='notstarted'>Not Started</option>
-                <option value='inprogress'>In Progress</option>
-                <option value='done'>Done</option>
+                <option value='red'>Not Started</option>
+                <option value='yellow'>In Progress</option>
+                <option value='green'>Done</option>
               </select>
           </label>
         </div>
