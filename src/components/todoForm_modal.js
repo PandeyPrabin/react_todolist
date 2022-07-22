@@ -6,10 +6,8 @@ function TodoForm_modal({openForm, setOpenForm, todos, setTodos}) {
   const [title, setTitle] = useState('')
   const [deadline, setDeadline] = useState('')
   const [status, setStatus] = useState('red')
-  //const [items, setItems] = useState([]) 
 
   const addItem = (e) =>{
-     // e.preventDefault()
     if(!title){
 
     }else{
@@ -21,13 +19,6 @@ function TodoForm_modal({openForm, setOpenForm, todos, setTodos}) {
     }
   }
   
-  const deleteItem = (id) =>{
-    const updateditems = todos.filter((elem, ind)=>{
-      return ind ===! id
-    })
-    setTodos(updateditems)
-  }
-
   return (
     <div>
         {openForm &&(

@@ -2,7 +2,7 @@ import React from 'react'
 import './todoitem.css';
 
 
-function TodoItem({title, deadline, status, todos, setTodos, openForm, setOpenForm}) {  
+function TodoItem({title, deadline, status, todos, setOpenForm}) {  
   const newEditTodo = () => {
      let newTodo = todos.find((todo)=>{
             return todo.id === todo.id
