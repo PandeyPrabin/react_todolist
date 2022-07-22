@@ -16,9 +16,8 @@ function TodoItem({title, deadline, status, todos, setTodos, openForm, setOpenFo
       <div className='status' style={{ background: status}}>
       </div>
        <div className='todo-item' onClick={newEditTodo}>
-        <ul  >{title}</ul>
-        <ul>Status:{status}</ul>
-        <ul>Deadline:{deadline}</ul>
+        <ul  className='title-text'>{title}</ul>
+        <ul className='deadline-text'>Deadline:{deadline}</ul>
         </div>
         </div>
         <div className='list-container'>
