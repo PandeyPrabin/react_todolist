@@ -9,7 +9,6 @@ function App() {
 
   const [openForm, setOpenForm] = useState(false)
   const [todos, setTodos] = useState([])
-
   return (
     <div className="App">
       <Addtodo_button 
@@ -20,7 +19,8 @@ function App() {
       todos={todos} 
       setTodos={setTodos} 
       openForm={openForm} 
-      setOpenForm={setOpenForm}/>
+      setOpenForm={setOpenForm}
+      />
       
       <TodoForm_modal 
       todos={todos} 
