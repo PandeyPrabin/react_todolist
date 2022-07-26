@@ -2,4 +2,27 @@
     display: flex;
     flex-direction: column;
     margin-left: 30px;
+    height: 100%;
+    width: 100%;
+}
+
+.App > div {
+    margin: 0.5rem;
+}
+
+.todo-container {
+    z-index: 1;
+    position: absolute;
+    top: 120px;
+    height: 80%;
+}
+
+.todo-list {
+    overflow: scroll;
+    height: inherit;
+}
+
+.modalWrapper {
+    z-index: 1;
+    position: relative;
 }

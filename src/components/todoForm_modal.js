@@ -5,11 +5,11 @@ function TodoForm_modal({openForm, setOpenForm, todos, setTodos}) {
 
   const [title, setTitle] = useState('')
   const [deadline, setDeadline] = useState('')
-  const [status, setStatus] = useState('red')
+  const [status, setStatus] = useState('')
 
   const addItem = (e) =>{
     if(!title){
-
+      return;
     }else{
       setTodos([...todos, {title:title, deadline:deadline, status:status, id: Math.random()*1000}])
       setTitle('')
@@ -20,7 +20,7 @@ function TodoForm_modal({openForm, setOpenForm, todos, setTodos}) {
   }
   
   return (
-    <div>
+    <div className="modalWrapper">
         {openForm &&(
     <div className='modalBackground'>
       <div className='modalContainer'>
@@ -37,15 +37,15 @@ function TodoForm_modal({openForm, setOpenForm, todos, setTodos}) {
         value={deadline}
         onChange={(e)=>setDeadline(e.target.value)}/></label>
           <label>
-              <select id='status'  
-        value={status}
-        onChange={(e)=>setStatus(e.target.value)}
-        className='select' placeholder='Status'>
-                <option value='red'>Status</option>
+        <select id='status'  
+            value={status}
+            onChange={(e)=>setStatus(e.target.value)}
+            className='select'>
+                <option defaultValue=''>Status</option>
                 <option value='red'>Not Started</option>
                 <option value='yellow'>In Progress</option>
                 <option value='green'>Done</option>
-              </select>
+        </select>
           </label>
         </div>
 
